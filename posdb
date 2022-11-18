@@ -1,1 +1,18 @@
 
+-- creating new schema
+CREATE SCHEMA posdb;
+
+-- using schema posdb
+USE posdb;
+
+-- CREATING NEW TABLE FOR CATEGORY LIST
+CREATE TABLE category(category_id INT(10) NOT NULL AUTO_INCREMENT, name VARCHAR(50) NOT NULL,description VARCHAR(100) NOT NULL, PRIMARY KEY (category_id));
+
+-- DESCRIBING/VIEW TABLE COLUMN
+DESC category;
+
+-- INSERTING DATA IN TABLE CATEGORY
+INSERT INTO category(name, description) VALUES ('Bakery', 'All Bakery Product'),('Beverage', 'All Drinks Product'),('Pharmacy', 'All Medicine Product'),('Meat', 'All Meat Product'),('Deli', 'All Regular Product');
+
+-- CHECKING ALL THE DATA FROM CATEGORY TABLE
+SELECT * FROM CATEGORY;

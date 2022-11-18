@@ -1,4 +1,3 @@
-
 -- creating new schema
 CREATE SCHEMA posdb;
 
@@ -6,13 +5,38 @@ CREATE SCHEMA posdb;
 USE posdb;
 
 -- CREATING NEW TABLE FOR CATEGORY LIST
-CREATE TABLE category(category_id INT(10) NOT NULL AUTO_INCREMENT, name VARCHAR(50) NOT NULL,description VARCHAR(100) NOT NULL, PRIMARY KEY (category_id));
+CREATE TABLE category(
+category_id INT(10) NOT NULL AUTO_INCREMENT, 
+name VARCHAR(50) NOT NULL,
+description VARCHAR(100) NOT NULL, 
+PRIMARY KEY (category_id));
 
 -- DESCRIBING/VIEW TABLE COLUMN
 DESC category;
 
 -- INSERTING DATA IN TABLE CATEGORY
-INSERT INTO category(name, description) VALUES ('Bakery', 'All Bakery Product'),('Beverage', 'All Drinks Product'),('Pharmacy', 'All Medicine Product'),('Meat', 'All Meat Product'),('Deli', 'All Regular Product');
+INSERT INTO category(
+name, description) VALUES 
+('Bakery', 'All Bakery Product'),
+('Beverage', 'All Drinks Product'),
+('Pharmacy', 'All Medicine Product'),
+('Meat', 'All Meat Product'),
+('Deli', 'All Regular Product');
 
 -- CHECKING ALL THE DATA FROM CATEGORY TABLE
 SELECT * FROM CATEGORY;
+
+-- creating table of product with relation to category table
+CREATE TABLE product(
+product_id INT(10) NOT NULL AUTO_INCREMENT,
+name VARCHAR(50) NOT NULL,
+description VARCHAR(100) NOT NULL, 
+qty_stock INT(50), 
+price INT(50) NOT NULL, 
+category_id int,
+PRIMARY KEY(product_id), 
+FOREIGN KEY(category_id) REFERENCES category(category_id));
+
+-- CHECKING ALL THE DATA FROM PRODUCT TABLE
+SELECT * FROM product;
+

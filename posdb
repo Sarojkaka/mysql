@@ -37,6 +37,21 @@ category_id int,
 PRIMARY KEY(product_id), 
 FOREIGN KEY(category_id) REFERENCES category(category_id));
 
+-- inserting value on table product
+
+INSERT INTO posdb.product 
+(name, description, qty_stock, price, category_id) VALUES 
+('Cake', 'Choclate cake', '2', '20', '1'),
+('Cake', 'Strawberry cake', '4', '20', '1'),
+('Drinks', 'Coca Cola', '5', '2', '2'),
+('Drinks', 'Pepsi', '5', '2', '2'),
+('Medicine', 'Nexium 24hr', '10', '5', '3'),
+('Meat', 'Chicken', '5', '2', '4'),
+('Meat', 'Goat', '10', '5', '4'),
+('Rice', 'Basmati Rice', '5', '25', '5'),
+('Dal', 'Indian Dal', '10', '3', '5');
+
+
 -- CHECKING ALL THE DATA FROM PRODUCT TABLE
 SELECT * FROM product;
 
